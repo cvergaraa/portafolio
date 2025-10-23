@@ -9,13 +9,14 @@ with st.sidebar:
   )
   st.write(parrafo)
 
-url_ia="https://sites.google.com/view/interfacesmultimodales/página-principalo"
+url_ia = "https://sites.google.com/view/interfacesmultimodales/página-principalo"
 st.subheader("En el siguiente enlace puedes encontrar páginas y ejercicios prácticos")
 st.write(f"Enlace para páginas y ejercicios: [Enlace]({url_ia})")
-col1, col2, col3, col4, col5 = st.columns(5)
+
+# Primera fila de columnas
+col1, col2, col3 = st.columns(3)
 
 with col1:
- 
  st.subheader("Intro")
  image = Image.open('txt_to_audio2.png')
  st.image(image, width=190)
@@ -59,7 +60,6 @@ with col2:
  url = "https://txespanol.streamlit.app"
  st.write(f"Transcriptor: [Enlace]({url})")
 
-
 with col3: 
  st.subheader("Generación en Contexto")
  image = Image.open('Chat_pdf.png')
@@ -82,46 +82,20 @@ with col3:
  url = "https://vision2-gpt4o.streamlit.app/"
  st.write(f"Vision: [Enlace]({url})")
 
-with col4: 
- st.subheader("Generación en Contexto")
- image = Image.open('Chat_pdf.png')
- st.image(image, width=190)
- st.write("En la siguiente veremos una aplicación que usa RAG a partir de un documento (PDF).") 
- url = "https://chatpdf-cc.streamlit.app/"
- st.write(f"RAG: [Enlace]({url})")
+# Segunda fila de columnas (vacías para que agregues luego tus imágenes y enlaces)
+col4, col5, col6 = st.columns(3)
 
- st.subheader("Análisis de Imagen")
- image = Image.open('OIG4.jpg')
- st.image(image, width=200)
- st.write("En la siguiente enlace veremos la capacidad de análisis en Imágenes.") 
- url = "https://vision2-gpt4o.streamlit.app/"
- st.write(f"Vision: [Enlace]({url})")
- 
- st.subheader("Sistema Ciberfísico")
- image = Image.open('OIG6.jpg')
- st.image(image, width=200)
- st.write("En la siguiente enlace veremos la capacidad de interacción con el mundo físico.") 
- url = "https://vision2-gpt4o.streamlit.app/"
- st.write(f"Vision: [Enlace]({url})")
+with col4:
+ st.subheader("Espacio adicional 1")
+ st.write("Aquí puedes agregar una nueva imagen y enlace.")
+ # Ejemplo:
+ # image = Image.open('tu_imagen.jpg')
+ # st.image(image, width=200)
 
-with col5: 
- st.subheader("Generación en Contexto")
- image = Image.open('Chat_pdf.png')
- st.image(image, width=190)
- st.write("En la siguiente veremos una aplicación que usa RAG a partir de un documento (PDF).") 
- url = "https://chatpdf-cc.streamlit.app/"
- st.write(f"RAG: [Enlace]({url})")
+with col5:
+ st.subheader("Espacio adicional 2")
+ st.write("Aquí puedes agregar una nueva imagen y enlace.")
 
- st.subheader("Análisis de Imagen")
- image = Image.open('OIG4.jpg')
- st.image(image, width=200)
- st.write("En la siguiente enlace veremos la capacidad de análisis en Imágenes.") 
- url = "https://vision2-gpt4o.streamlit.app/"
- st.write(f"Vision: [Enlace]({url})")
- 
- st.subheader("Sistema Ciberfísico")
- image = Image.open('OIG6.jpg')
- st.image(image, width=200)
- st.write("En la siguiente enlace veremos la capacidad de interacción con el mundo físico.") 
- url = "https://vision2-gpt4o.streamlit.app/"
- st.write(f"Vision: [Enlace]({url})")
+with col6:
+ st.subheader("Espacio adicional 3")
+ st.write("Aquí puedes agregar una nueva imagen y enlace.")
