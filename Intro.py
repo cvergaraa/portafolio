@@ -24,26 +24,19 @@ with col1:
  url = "https://primerpaginacami.streamlit.app"
  st.write(f"Intro: [Enlace]({url})")
 
- st.subheader("Texto a Voz")
+ st.subheader("Texto a Voz ")
  image = Image.open('image_2025-10-23_000022811.png')
  st.image(image, width=200)
  st.write("En la siguiente enlace se vera la creacion de texto a voz") 
  url = "https://cuentodelgato.streamlit.app/"
  st.write(f"YOLO: [Enlace]({url})")
 
- st.subheader("Traductors")
- image = Image.open('image_2025-10-22_235955063.png')
- st.image(image, width=200)
- st.write("En la siguiente enlace se vera como traduce un audio.") 
- url = "https://traductoridioma.streamlit.app"
- st.write(f"YOLO: [Enlace]({url})")
-
 with col2: 
- st.subheader("Conversión de voz a texto")
+ st.subheader("Conversión de voz a texto - traductor")
  image = Image.open('image_2025-10-22_235920847.png')
  st.image(image, width=200)
  st.write("En la siguiente veremos una aplicación que usa la conversión de voz a texto.") 
- url = "https://traductor-ab0sp9f6fi.streamlit.app/"
+ url = "https://traductoridioma.streamlit.app"
  st.write(f"Voz a texto: [Enlace]({url})")
 
  st.subheader("Reconocimiento Óptico de Caracteres OCR")
