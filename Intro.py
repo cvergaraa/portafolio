@@ -122,7 +122,7 @@ with col5:
  st.write(f"Datos: [Enlace]({url})")
 
  st.subheader("CONTROL POR VOZ")
- image = Image.open('ctrlvoz.jpg')
+ image = Image.open('ctrlvoz.png')
  st.image(image, width=200)
  st.write("En la siguiente enlace veremos como realizamos transcripciones de audio/video.") 
  url = "Control de voz con el Broker."
