@@ -83,37 +83,47 @@ with col3:
     url = "https://vision2-gpt4o.streamlit.app/"
     st.write(f"Vision: [Enlace]({url})")
 
-with col4:
-    st.subheader("Detección de Objetos")
-    # 🔲 Aquí puedes agregar tu imagen, por ejemplo:
-    # image = Image.open('OIG9.jpg')
-    # st.image(image, width=200)
-    st.write("En la siguiente enlace veremos una app que usa IA para detectar objetos en imágenes.") 
-    url = "https://deteccionobjetos.streamlit.app/"
-    st.write(f"Detección: [Enlace]({url})")
+with col4: 
+ st.subheader("Generación en Contexto")
+ image = Image.open('Chat_pdf.png')
+ st.image(image, width=190)
+ st.write("En la siguiente veremos una aplicación que usa RAG a partir de un documento (PDF).") 
+ url = "https://chatpdf-cc.streamlit.app/"
+ st.write(f"RAG: [Enlace]({url})")
 
-    st.subheader("Análisis de Sentimientos")
-    # 🔲 Aquí puedes agregar tu imagen, por ejemplo:
-    # image = Image.open('sentimientos.png')
-    # st.image(image, width=200)
-    st.write("En la siguiente enlace veremos cómo analizar el sentimiento de un texto con IA.") 
-    url = "https://analisisentimientos.streamlit.app/"
-    st.write(f"Sentimientos: [Enlace]({url})")
+ st.subheader("Análisis de Imagen")
+ image = Image.open('OIG4.jpg')
+ st.image(image, width=200)
+ st.write("En la siguiente enlace veremos la capacidad de análisis en Imágenes.") 
+ url = "https://vision2-gpt4o.streamlit.app/"
+ st.write(f"Vision: [Enlace]({url})")
+ 
+ st.subheader("Sistema Ciberfísico")
+ image = Image.open('OIG6.jpg')
+ st.image(image, width=200)
+ st.write("En la siguiente enlace veremos la capacidad de interacción con el mundo físico.") 
+ url = "https://vision2-gpt4o.streamlit.app/"
+ st.write(f"Vision: [Enlace]({url})")
 
-with col5:
-    st.subheader("Generador de Imágenes IA")
-    # 🔲 Aquí puedes agregar tu imagen, por ejemplo:
-    # image = Image.open('img_gen.png')
-    # st.image(image, width=200)
-    st.write("En la siguiente enlace veremos una IA capaz de generar imágenes desde texto.") 
-    url = "https://generadorimg.streamlit.app/"
-    st.write(f"Generador: [Enlace]({url})")
+with col5: 
+ st.subheader("Generación en Contexto")
+ image = Image.open('Chat_pdf.png')
+ st.image(image, width=190)
+ st.write("En la siguiente veremos una aplicación que usa RAG a partir de un documento (PDF).") 
+ url = "https://chatpdf-cc.streamlit.app/"
+ st.write(f"RAG: [Enlace]({url})")
 
-    st.subheader("Chatbot Multimodal")
-    # 🔲 Aquí puedes agregar tu imagen, por ejemplo:
-    # image = Image.open('chatbot.png')
-    # st.image(image, width=200)
-    st.write("En la siguiente enlace veremos un chatbot que puede analizar texto e imágenes.") 
-    url = "https://chatbotmultimodal.streamlit.app/"
-    st.write(f"Chatbot: [Enlace]({url})")
+ st.subheader("Análisis de Imagen")
+ image = Image.open('OIG4.jpg')
+ st.image(image, width=200)
+ st.write("En la siguiente enlace veremos la capacidad de análisis en Imágenes.") 
+ url = "https://vision2-gpt4o.streamlit.app/"
+ st.write(f"Vision: [Enlace]({url})")
+ 
+ st.subheader("Sistema Ciberfísico")
+ image = Image.open('OIG6.jpg')
+ st.image(image, width=200)
+ st.write("En la siguiente enlace veremos la capacidad de interacción con el mundo físico.") 
+ url = "https://vision2-gpt4o.streamlit.app/"
+ st.write(f"Vision: [Enlace]({url})")
 
