@@ -5,29 +5,29 @@ st.title("Portafolio Multimodales")
 with st.sidebar:
   st.subheader("Portafolio Multimodales - Camila Vergara")
   parrafo = (
-    "La inteligencia artificial permite mejorar la toma de decisiones con el uso de datos, "
+    "Aqui podremos ver los diferentes codigos trabajados en el semestre "
 
   )
   st.write(parrafo)
 
-url_ia="https://sites.google.com/view/aplicacionesdeia/inicio"
+url_ia="https://sites.google.com/view/interfacesmultimodales/página-principalo"
 st.subheader("En el siguiente enlace puedes encontrar páginas y ejercicios prácticos")
 st.write(f"Enlace para páginas y ejercicios: [Enlace]({url_ia})")
 col1, col2, col3 = st.columns(3)
 
 with col1:
  
- st.subheader("Conversión de texto a voz")
+ st.subheader("Intro")
  image = Image.open('txt_to_audio2.png')
  st.image(image, width=190)
- st.write("En la siguiente enlace usaremos una de las aplicaciones de Inteligencia Artificial") 
- url = "https://imultimod.streamlit.app/"
- st.write(f"Texto a voz: [Enlace]({url})")
+ st.write("En el siguiente enlase se vera la primera pagina") 
+ url = "https://primerpaginacami.streamlit.app"
+ st.write(f"Intro: [Enlace]({url})")
 
- st.subheader("Reconocimiento de Objetos")
+ st.subheader("Texto a Voz")
  image = Image.open('txt_to_audio.png')
  st.image(image, width=200)
- st.write("En la siguiente enlace veremos como se detectan objetos en Imágenes.") 
+ st.write("En la siguiente enlace se vera la creacion de texto a voz") 
  url = "https://xn3pg24ztuv6fdiqon8qn3.streamlit.app/"
  st.write(f"YOLO: [Enlace]({url})")
 
