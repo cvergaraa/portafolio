@@ -6,8 +6,7 @@ with st.sidebar:
   st.subheader("Portafolio Multimodales - Camila Vergara")
   parrafo = (
     "La inteligencia artificial permite mejorar la toma de decisiones con el uso de datos, "
-    "automatizar tareas rutinarias y proporcionar análisis avanzados en tiempo real, lo que "
-    "resulta en una mayor eficiencia y precisión en diversos campos."
+
   )
   st.write(parrafo)
 
