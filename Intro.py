@@ -15,7 +15,7 @@ st.subheader("En el siguiente enlace puedes encontrar páginas y ejercicios prá
 st.write(f"Enlace para páginas y ejercicios: [Enlace]({url_ia})")
 
 # Ahora con 5 columnas
-col1, col2, col3, col4, col5 = st.columns(5)
+col1, col2, col3 = st.columns()
 
 with col1:
   st.subheader("Intro")
@@ -82,33 +82,3 @@ with col3:
   st.write("En la siguiente enlace veremos la capacidad de interacción con el mundo físico.") 
   url = "https://vision2-gpt4o.streamlit.app/"
   st.write(f"Vision: [Enlace]({url})")
-
-with col4:
-  st.subheader("Detección de Objetos")
-  image = Image.open('OIG9.jpg')
-  st.image(image, width=200)
-  st.write("En la siguiente enlace veremos una app que usa IA para detectar objetos en imágenes.") 
-  url = "https://deteccionobjetos.streamlit.app/"
-  st.write(f"Detección: [Enlace]({url})")
-
-  st.subheader("Análisis de Sentimientos")
-  image = Image.open('sentimientos.png')
-  st.image(image, width=200)
-  st.write("En la siguiente enlace veremos cómo analizar el sentimiento de un texto con IA.") 
-  url = "https://analisisentimientos.streamlit.app/"
-  st.write(f"Sentimientos: [Enlace]({url})")
-
-with col5:
-  st.subheader("Generador de Imágenes IA")
-  image = Image.open('img_gen.png')
-  st.image(image, width=200)
-  st.write("En la siguiente enlace veremos una IA capaz de generar imágenes desde texto.") 
-  url = "https://generadorimg.streamlit.app/"
-  st.write(f"Generador: [Enlace]({url})")
-
-  st.subheader("Chatbot Multimodal")
-  image = Image.open('chatbot.png')
-  st.image(image, width=200)
-  st.write("En la siguiente enlace veremos un chatbot que puede analizar texto e imágenes.") 
-  url = "https://chatbotmultimodal.streamlit.app/"
-  st.write(f"Chatbot: [Enlace]({url})")
