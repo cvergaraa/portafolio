@@ -28,14 +28,14 @@ with col1:
  image = Image.open('txt_to_audio.png')
  st.image(image, width=200)
  st.write("En la siguiente enlace se vera la creacion de texto a voz") 
- url = "https://xn3pg24ztuv6fdiqon8qn3.streamlit.app/"
+ url = "https://cuentodelgato.streamlit.app/"
  st.write(f"YOLO: [Enlace]({url})")
 
- st.subheader("Entrenando Modelos")
+ st.subheader("Traductors")
  image = Image.open('OIG5.jpg')
  st.image(image, width=200)
- st.write("En la siguiente enlace veremos como puedes usar tu modelo entrenado.") 
- url = "https://xn3pg24ztuv6fdiqon8qn3.streamlit.app/"
+ st.write("En la siguiente enlace se vera como traduce un audio.") 
+ url = "https://traductoridioma.streamlit.app"
  st.write(f"YOLO: [Enlace]({url})")
 
 with col2: 
@@ -46,18 +46,18 @@ with col2:
  url = "https://traductor-ab0sp9f6fi.streamlit.app/"
  st.write(f"Voz a texto: [Enlace]({url})")
 
- st.subheader("Análisis de Datos")
+ st.subheader("Reconocimiento Óptico de Caracteres OCR")
  image = Image.open('data_analisis.png')
  st.image(image, width=190)
  st.write("En la siguiente enlace veremos como se pueden analizar datos usando agentes.") 
- url = "https://asistpy-csv.streamlit.app/"
+ url = "https://audio-ocr.streamlit.app"
  st.write(f"Datos: [Enlace]({url})")
 
- st.subheader("Trasnscriptor Audio y Video")
+ st.subheader("Analisis de texto - Español")
  image = Image.open('OIG3.jpg')
  st.image(image, width=200)
  st.write("En la siguiente enlace veremos como realizamos transcripciones de audio/video.") 
- url = "https://transcript-whisper.streamlit.app/"
+ url = "https://txespanol.streamlit.app"
  st.write(f"Transcriptor: [Enlace]({url})")
 
 
