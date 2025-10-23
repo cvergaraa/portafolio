@@ -83,19 +83,48 @@ with col3:
  st.write(f"Vision: [Enlace]({url})")
 
 # Segunda fila de columnas (vacías para que agregues luego tus imágenes y enlaces)
-col4, col5, col6 = st.columns(3)
+col4, col5 = st.columns(2)
 
 with col4:
- st.subheader("Espacio adicional 1")
- st.write("Aquí puedes agregar una nueva imagen y enlace.")
- # Ejemplo:
- # image = Image.open('tu_imagen.jpg')
- # st.image(image, width=200)
+ st.subheader("Intro")
+ image = Image.open('txt_to_audio2.png')
+ st.image(image, width=190)
+ st.write("En el siguiente enlase se vera la primera pagina") 
+ url = "https://primerpaginacami.streamlit.app"
+ st.write(f"Intro: [Enlace]({url})")
+
+ st.subheader("Texto a Voz")
+ image = Image.open('txt_to_audio.png')
+ st.image(image, width=200)
+ st.write("En la siguiente enlace se vera la creacion de texto a voz") 
+ url = "https://cuentodelgato.streamlit.app/"
+ st.write(f"YOLO: [Enlace]({url})")
+
+ st.subheader("Traductors")
+ image = Image.open('OIG5.jpg')
+ st.image(image, width=200)
+ st.write("En la siguiente enlace se vera como traduce un audio.") 
+ url = "https://traductoridioma.streamlit.app"
+ st.write(f"YOLO: [Enlace]({url})")
 
 with col5:
- st.subheader("Espacio adicional 2")
- st.write("Aquí puedes agregar una nueva imagen y enlace.")
+ st.subheader("Intro")
+ image = Image.open('txt_to_audio2.png')
+ st.image(image, width=190)
+ st.write("En el siguiente enlase se vera la primera pagina") 
+ url = "https://primerpaginacami.streamlit.app"
+ st.write(f"Intro: [Enlace]({url})")
 
-with col6:
- st.subheader("Espacio adicional 3")
- st.write("Aquí puedes agregar una nueva imagen y enlace.")
+ st.subheader("Texto a Voz")
+ image = Image.open('txt_to_audio.png')
+ st.image(image, width=200)
+ st.write("En la siguiente enlace se vera la creacion de texto a voz") 
+ url = "https://cuentodelgato.streamlit.app/"
+ st.write(f"YOLO: [Enlace]({url})")
+
+ st.subheader("Traductors")
+ image = Image.open('OIG5.jpg')
+ st.image(image, width=200)
+ st.write("En la siguiente enlace se vera como traduce un audio.") 
+ url = "https://traductoridioma.streamlit.app"
+ st.write(f"YOLO: [Enlace]({url})")
