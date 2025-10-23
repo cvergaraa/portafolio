@@ -124,6 +124,6 @@ with col5:
  st.subheader("CONTROL POR VOZ")
  image = Image.open('ctrlvoz.png')
  st.image(image, width=200)
- st.write("En la siguiente enlace veremos como realizamos transcripciones de audio/video.") 
- url = "Control de voz con el Broker."
+ st.write("Control de voz con el Broker.") 
+ url = "https://controlador-voz.streamlit.app"
  st.write(f"Transcriptor: [Enlace]({url})")
