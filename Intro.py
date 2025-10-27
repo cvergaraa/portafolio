@@ -78,7 +78,8 @@ with st.sidebar:
 
 
 proyectos = [
-    {"titulo": "Intro", "descripcion": "Primera página del portafolio.", "imagen": "image_2025-10-23_000052698.png", "url": "https://primerpaginacami.streamlit.app"},
+    {"titulo": "Intro", "descripcion": "Primera página del portafolio.", "imagen": "image_2025-10-23_000052698.png", 
+    st.write(f"Enlace para páginas y ejercicios: [Enlace]({url_ia})")},
     {"titulo": "Conversión de voz a texto - traductor", "descripcion": "Aplicación que convierte voz a texto.", "imagen": "image_2025-10-22_235920847.png", "url": "https://traductoridioma.streamlit.app"},
     {"titulo": "Análisis de texto - Inglés", "descripcion": "Análisis de texto en inglés.", "imagen": "image_2025-10-22_235720040.png", "url": "https://txingles.streamlit.app"},
     {"titulo": "Texto a Voz", "descripcion": "Conversión de texto a voz.", "imagen": "image_2025-10-23_000022811.png", "url": "https://cuentodelgato.streamlit.app/"},
