@@ -85,7 +85,7 @@ st.markdown("<h1>🌸 Portafolio Multimodales 🌸</h1>", unsafe_allow_html=True
 
 with st.sidebar:
     st.subheader("Portafolio Multimodales - Camila Vergara")
-    st.write("Aquí podremos ver los diferentes códigos trabajados en el semestre.")
+    
 
 
 proyectos = [
