@@ -1,17 +1,21 @@
 import streamlit as st
 from PIL import Image
-import base64
 
 st.set_page_config(layout="wide")
 
-# --- Fondo y colores ---
+# --- Estilos personalizados ---
 st.markdown("""
     <style>
-        [data-testid="stAppViewContainer"] {
+        body {
             background-color: #D8F3FF;
             color: #003366;
         }
-        [data-testid="stHeader"] {background: none;}
+        [data-testid="stAppViewContainer"] {
+            background-color: #D8F3FF;
+        }
+        [data-testid="stHeader"] {
+            background: none;
+        }
         h1, h2, h3, h4, h5, h6, p, a {
             color: #003366 !important;
         }
@@ -22,36 +26,46 @@ st.markdown("""
             margin: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             text-align: center;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-        .tarjeta:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        .tarjeta img {
+            border-radius: 10px;
         }
-        .titulo { font-weight: bold; font-style: italic; margin-top: 5px; }
-        .descripcion { font-size: 14px; margin-bottom: 8px; }
+        .titulo {
+            font-weight: bold;
+            font-style: italic;
+            margin-top: 5px;
+        }
+        .descripcion {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
         .enlace a {
             color: #00AEEF !important;
             font-style: italic;
             text-decoration: none;
             font-weight: bold;
         }
-        .enlace a:hover { text-decoration: underline; }
+        .enlace a:hover {
+            text-decoration: underline;
+        }
     </style>
 """, unsafe_allow_html=True)
 
 # --- Título ---
-st.markdown("""
+st.markdown(
+    """
     <h1 style='text-align:center;'>🌸 Portafolio Multimodales 🌸</h1>
     <p style='text-align:center; font-size:18px;'>Proyectos desarrollados durante el semestre</p>
-""", unsafe_allow_html=True)
+    """,
+    unsafe_allow_html=True
+)
 
 # --- Sidebar ---
 with st.sidebar:
     st.subheader("Portafolio Multimodales - Camila Vergara")
     st.write("Aquí podrás explorar los diferentes códigos trabajados en el semestre.")
 
-# --- Lista de proyectos ---
+# --- Lista de proyectos (14 en total) ---
 proyectos = [
     {"titulo": "Intro", "descripcion": "Primera página del portafolio.", "imagen": "image_2025-10-23_000052698.png", "url": "https://primerpaginacami.streamlit.app"},
     {"titulo": "Conversión voz a texto", "descripcion": "Convierte voz a texto en tiempo real.", "imagen": "image_2025-10-22_235920847.png", "url": "https://traductoridioma.streamlit.app"},
@@ -65,21 +79,19 @@ proyectos = [
     {"titulo": "Control por voz", "descripcion": "Control de voz con MQTT.", "imagen": "ctrlvoz.png", "url": "https://controlador-voz.streamlit.app"},
     {"titulo": "Análisis de imagen", "descripcion": "Procesamiento visual de imágenes.", "imagen": "81dad8c3-efd9-4981-853c-0cf216c0351c.png", "url": "https://analisis-imagen.streamlit.app"},
     {"titulo": "Traducción Multilenguaje", "descripcion": "Traduce entre varios idiomas.", "imagen": "7e01d942-1f89-4fa5-a7b8-d5e35944d5b1.png", "url": "https://multitraductor.streamlit.app"},
-    {"titulo": "Audio Análisis", "descripcion": "Analiza y clasifica sonidos.", "imagen": "8cec6e73-f8bf-4ebe-b81a-242c979d8755.png", "url": "https://analisis-audio.streamlit.app"},
+    {"titulo": "Audio Análisis", "descripcion": "Analiza y clasifica sonidos.", "imagen": "image_2025-10-23_000105328.png", "url": "https://analisis-audio.streamlit.app"},
     {"titulo": "Visión Artificial", "descripcion": "Detección avanzada con visión computacional.", "imagen": "image_2025-10-23_000130444.png", "url": "https://visionia.streamlit.app"}
 ]
 
-# --- Mostrar proyectos ---
+# --- Mostrar en cuadrícula ---
 cols = st.columns(5)
 for i, proyecto in enumerate(proyectos):
     with cols[i % 5]:
-        try:
-            img = Image.open(proyecto["imagen"])
-            st.markdown('<div class="tarjeta">', unsafe_allow_html=True)
-            st.image(img, use_container_width=True)
-            st.markdown(f"<p class='titulo'>{proyecto['titulo']}</p>", unsafe_allow_html=True)
-            st.markdown(f"<p class='descripcion'>{proyecto['descripcion']}</p>", unsafe_allow_html=True)
-            st.markdown(f"<p class='enlace'><a href='{proyecto['url']}' target='_blank'>Enlace</a></p>", unsafe_allow_html=True)
-            st.markdown('</div>', unsafe_allow_html=True)
-        except FileNotFoundError:
-            st.warning(f"⚠️ No se encontró la imagen: {proyecto['imagen']}")
+        st.markdown(f"""
+            <div class="tarjeta">
+                <img src="{proyecto['imagen']}" width="100%" />
+                <p class="titulo">{proyecto['titulo']}</p>
+                <p class="descripcion">{proyecto['descripcion']}</p>
+                <p class="enlace"><a href="{proyecto['url']}" target="_blank">Enlace</a></p>
+            </div>
+        """, unsafe_allow_html=True)
