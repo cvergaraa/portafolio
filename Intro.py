@@ -1,10 +1,10 @@
 import streamlit as st
 from PIL import Image
 
-# --- Configuración general ---
+
 st.set_page_config(layout="wide")
 
-# --- Estilos globales (CSS) ---
+
 st.markdown("""
     <style>
         /* Fondo general */
@@ -68,16 +68,15 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# --- Título principal ---
-st.markdown("<h1>Portafolio Multimodales</h1>", unsafe_allow_html=True)
-st.markdown("<p>Descripción de los trabajos</p>", unsafe_allow_html=True)
 
-# --- Sidebar ---
+st.markdown("<h1>☀️ Portafolio Multimodales ✨</h1>", unsafe_allow_html=True)
+st.markdown("<p>🪷</p>", unsafe_allow_html=True)
+
+
 with st.sidebar:
     st.subheader("Portafolio Multimodales - Camila Vergara")
-    st.write("Aquí podremos ver los diferentes códigos trabajados en el semestre.")
 
-# --- Lista de proyectos ---
+
 proyectos = [
     {"titulo": "Intro", "descripcion": "Primera página del portafolio.", "imagen": "image_2025-10-23_000052698.png", "url": "https://primerpaginacami.streamlit.app"},
     {"titulo": "Conversión de voz a texto - traductor", "descripcion": "Aplicación que convierte voz a texto.", "imagen": "image_2025-10-22_235920847.png", "url": "https://traductoridioma.streamlit.app"},
