@@ -1,103 +1,113 @@
 import streamlit as st
 from PIL import Image
 
-st.set_page_config(layout="wide", page_title="Portafolio Multimodales")
+# --- Configuración general ---
+st.set_page_config(layout="wide")
 
-# --- Estilos generales ---
+# --- Estilos globales (CSS) ---
 st.markdown("""
     <style>
-        [data-testid="stAppViewContainer"] {
-            background-color: #D8F3FF;
-            color: #003366;
+        /* Fondo general */
+        .stApp {
+            background-color: #CDEDFD;
+            color: #0A2342;
         }
-        [data-testid="stHeader"] {background: none;}
-        h1, h2, h3, h4, h5, h6, p, a {
-            color: #003366 !important;
+
+        /* Título principal */
+        h1 {
+            text-align: center;
+            color: #0A2342;
         }
-        .main-container {
-            display: flex;
-            justify-content: center;
+
+        /* Subtítulos y párrafos */
+        p {
+            text-align: center;
+            color: #0A2342;
         }
-        .tarjeta {
+
+        /* Tarjetas */
+        .card {
             background-color: white;
             border-radius: 15px;
-            padding: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            padding: 15px;
             margin: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
-        .tarjeta:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-        }
-        .tarjeta img {
+
+        /* Imagen centrada */
+        .card img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
             border-radius: 10px;
         }
-        .titulo {
-            font-weight: bold;
-            font-style: italic;
-            margin-top: 5px;
-            font-size: 16px;
-        }
-        .descripcion {
-            font-size: 14px;
-            margin-bottom: 8px;
-        }
-        .enlace a {
+
+        /* Enlace estilizado */
+        .link {
+            text-align: center;
             color: #00AEEF !important;
             font-style: italic;
-            text-decoration: none;
             font-weight: bold;
         }
-        .enlace a:hover { text-decoration: underline; }
+
+        /* Texto de título de cada tarjeta */
+        .titulo {
+            text-align: center;
+            font-weight: bold;
+            font-style: italic;
+            color: #0A2342;
+            margin-top: 8px;
+        }
+
+        /* Descripción */
+        .desc {
+            text-align: center;
+            color: #0A2342;
+            font-size: 15px;
+        }
     </style>
 """, unsafe_allow_html=True)
 
-# --- Título ---
-st.markdown("""
-    <h1 style='text-align:center;'>🌸 Portafolio Multimodales 🌸</h1>
-    <p style='text-align:center; font-size:18px;'>Proyectos desarrollados durante el semestre</p>
-""", unsafe_allow_html=True)
+# --- Título principal ---
+st.markdown("<h1>Portafolio Multimodales</h1>", unsafe_allow_html=True)
+st.markdown("<p>Descripción de los trabajos</p>", unsafe_allow_html=True)
 
 # --- Sidebar ---
 with st.sidebar:
     st.subheader("Portafolio Multimodales - Camila Vergara")
-    st.write("Aquí podrás explorar los diferentes códigos trabajados durante el semestre.")
+    st.write("Aquí podremos ver los diferentes códigos trabajados en el semestre.")
 
-# --- Lista de los 14 proyectos ---
+# --- Lista de proyectos ---
 proyectos = [
     {"titulo": "Intro", "descripcion": "Primera página del portafolio.", "imagen": "image_2025-10-23_000052698.png", "url": "https://primerpaginacami.streamlit.app"},
-    {"titulo": "Conversión voz a texto", "descripcion": "Convierte voz a texto en tiempo real.", "imagen": "image_2025-10-22_235920847.png", "url": "https://traductoridioma.streamlit.app"},
-    {"titulo": "Texto a voz", "descripcion": "Convierte texto en audio natural.", "imagen": "image_2025-10-23_000022811.png", "url": "https://cuentodelgato.streamlit.app"},
-    {"titulo": "Análisis texto inglés", "descripcion": "Analiza texto en inglés.", "imagen": "image_2025-10-22_235720040.png", "url": "https://txingles.streamlit.app"},
-    {"titulo": "Reconocimiento OCR", "descripcion": "Detecta texto en imágenes con OCR.", "imagen": "image_2025-10-22_235834591.png", "url": "https://audio-ocr.streamlit.app"},
-    {"titulo": "Objetos en imagen", "descripcion": "Reconoce objetos con inteligencia artificial.", "imagen": "image_2025-10-22_235633240.png", "url": "https://yolocami.streamlit.app"},
-    {"titulo": "Reconocimiento de gestos", "descripcion": "Detecta gestos con cámara.", "imagen": "image_2025-10-22_235547846.png", "url": "https://tmcami.streamlit.app"},
-    {"titulo": "Análisis texto español", "descripcion": "Analiza textos en español.", "imagen": "image_2025-10-22_235806012.png", "url": "https://txespanol.streamlit.app"},
-    {"titulo": "Tablero inteligente", "descripcion": "Tablero de control activado por voz.", "imagen": "image_2025-10-22_235148140.png", "url": "https://bocetostablero.streamlit.app"},
-    {"titulo": "Control por voz", "descripcion": "Control de voz con MQTT.", "imagen": "ctrlvoz.png", "url": "https://controlador-voz.streamlit.app"},
-    {"titulo": "Análisis de imagen", "descripcion": "Procesamiento visual de imágenes.", "imagen": "81dad8c3-efd9-4981-853c-0cf216c0351c.png", "url": "https://analisis-imagen.streamlit.app"},
-    {"titulo": "Traducción Multilenguaje", "descripcion": "Traduce entre varios idiomas.", "imagen": "7e01d942-1f89-4fa5-a7b8-d5e35944d5b1.png", "url": "https://multitraductor.streamlit.app"},
-    {"titulo": "Audio Análisis", "descripcion": "Analiza y clasifica sonidos.", "imagen": "8cec6e73-f8bf-4ebe-b81a-242c979d8755.png", "url": "https://analisis-audio.streamlit.app"},
-    {"titulo": "Visión Artificial", "descripcion": "Detección avanzada con visión computacional.", "imagen": "image_2025-10-23_000130444.png", "url": "https://visionia.streamlit.app"}
+    {"titulo": "Conversión de voz a texto - traductor", "descripcion": "Aplicación que convierte voz a texto.", "imagen": "image_2025-10-22_235920847.png", "url": "https://traductoridioma.streamlit.app"},
+    {"titulo": "Análisis de texto - Inglés", "descripcion": "Análisis de texto en inglés.", "imagen": "image_2025-10-22_235720040.png", "url": "https://txingles.streamlit.app"},
+    {"titulo": "Texto a Voz", "descripcion": "Conversión de texto a voz.", "imagen": "image_2025-10-23_000022811.png", "url": "https://cuentodelgato.streamlit.app/"},
+    {"titulo": "Reconocimiento Óptico de Caracteres OCR", "descripcion": "Reconocimiento de caracteres en una imagen.", "imagen": "image_2025-10-22_235834591.png", "url": "https://audio-ocr.streamlit.app"},
+    {"titulo": "Análisis de texto - Español", "descripcion": "Análisis semántico de texto en español.", "imagen": "image_2025-10-22_235806012.png", "url": "https://txespanol.streamlit.app"},
+    {"titulo": "Objetos en imagen", "descripcion": "Reconocimiento de objetos mediante IA.", "imagen": "image_2025-10-22_235633240.png", "url": "https://yolocami.streamlit.app"},
+    {"titulo": "Reconocimiento de gestos", "descripcion": "Modelo que detecta gestos en cámara.", "imagen": "image_2025-10-22_235547846.png", "url": "https://tmcami.streamlit.app"},
+    {"titulo": "Chat PDF", "descripcion": "Analizador de documentos PDF.", "imagen": "image_2025-10-22_235457515.png", "url": "https://un-pdfchat.streamlit.app"},
+    {"titulo": "Interpretación de imagen", "descripcion": "Aplicación de reconocimiento visual.", "imagen": "image_2025-10-22_235405838.png", "url": "https://renocimientoimagenes.streamlit.app"},
+    {"titulo": "Tablero personalizado", "descripcion": "Tablero de caracteres personalizado.", "imagen": "image_2025-10-22_235245016.png", "url": "https://tablerodibujoo.streamlit.app"},
+    {"titulo": "Tablero Inteligente", "descripcion": "Tablero que analiza comandos por voz.", "imagen": "image_2025-10-22_235148140.png", "url": "https://bocetostablero.streamlit.app"},
+    {"titulo": "Lector de Sensor MQTT", "descripcion": "Lectura y análisis de datos vía MQTT.", "imagen": "image_2025-10-22_235030401.png", "url": "https://recepprocess.streamlit.app"},
+    {"titulo": "Control por Voz", "descripcion": "Control de sistemas mediante comandos de voz.", "imagen": "ctrlvoz.png", "url": "https://controlador-voz.streamlit.app"}
 ]
 
-# --- Mostrar los proyectos en cuadrícula ---
+# --- Mostrar en cuadrícula ---
 num_cols = 5
 cols = st.columns(num_cols)
 
 for i, proyecto in enumerate(proyectos):
-    col = cols[i % num_cols]
-    with col:
-        try:
-            img = Image.open(proyecto["imagen"])
-            st.markdown('<div class="tarjeta">', unsafe_allow_html=True)
-            st.image(img, use_container_width=True)
-            st.markdown(f"<p class='titulo'>{proyecto['titulo']}</p>", unsafe_allow_html=True)
-            st.markdown(f"<p class='descripcion'>{proyecto['descripcion']}</p>", unsafe_allow_html=True)
-            st.markdown(f"<p class='enlace'><a href='{proyecto['url']}' target='_blank'>Enlace</a></p>", unsafe_allow_html=True)
-            st.markdown('</div>', unsafe_allow_html=True)
-        except FileNotFoundError:
-            st.warning(f"⚠️ No se encontró la imagen: {proyecto['imagen']}")
+    with cols[i % num_cols]:
+        st.markdown("<div class='card'>", unsafe_allow_html=True)
+        st.image(Image.open(proyecto["imagen"]), use_container_width=True)
+        st.markdown(f"<div class='titulo'>{proyecto['titulo']}</div>", unsafe_allow_html=True)
+        st.markdown(f"<div class='desc'>{proyecto['descripcion']}</div>", unsafe_allow_html=True)
+        st.markdown(f"<div class='link'>[enlace]({proyecto['url']})</div>", unsafe_allow_html=True)
+        st.markdown("</div>", unsafe_allow_html=True)
+
+    if (i + 1) % num_cols == 0:
+        cols = st.columns(num_cols)
 
