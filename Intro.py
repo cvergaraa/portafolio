@@ -42,14 +42,6 @@ st.markdown("""
             border-radius: 10px;
         }
 
-        /* Enlace estilizado */
-        .link {
-            text-align: center;
-            color: #00AEEF !important;
-            font-style: italic;
-            font-weight: bold;
-        }
-
         /* Texto de título de cada tarjeta */
         .titulo {
             text-align: center;
@@ -65,12 +57,30 @@ st.markdown("""
             color: #0A2342;
             font-size: 15px;
         }
+
+        /* Enlace estilizado */
+        .link {
+            text-align: center;
+            color: #00AEEF !important;
+            font-style: italic;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .link a {
+            color: #00AEEF !important;
+            text-decoration: none;
+        }
+
+        .link a:hover {
+            text-decoration: underline;
+        }
     </style>
 """, unsafe_allow_html=True)
 
 # --- Título principal ---
-st.markdown("<h1>Portafolio Multimodales</h1>", unsafe_allow_html=True)
-st.markdown("<p>Descripción de los trabajos</p>", unsafe_allow_html=True)
+st.markdown("<h1>🌸 Portafolio Multimodales 🌸</h1>", unsafe_allow_html=True)
+st.markdown("<p>Proyectos desarrollados durante el semestre</p>", unsafe_allow_html=True)
 
 # --- Sidebar ---
 with st.sidebar:
@@ -105,9 +115,8 @@ for i, proyecto in enumerate(proyectos):
         st.image(Image.open(proyecto["imagen"]), use_container_width=True)
         st.markdown(f"<div class='titulo'>{proyecto['titulo']}</div>", unsafe_allow_html=True)
         st.markdown(f"<div class='desc'>{proyecto['descripcion']}</div>", unsafe_allow_html=True)
-        st.markdown(f"<div class='link'>[enlace]({proyecto['url']})</div>", unsafe_allow_html=True)
+        st.markdown(f"<p class='link'><a href='{proyecto['url']}' target='_blank'>Enlace</a></p>", unsafe_allow_html=True)
         st.markdown("</div>", unsafe_allow_html=True)
 
     if (i + 1) % num_cols == 0:
         cols = st.columns(num_cols)
-
