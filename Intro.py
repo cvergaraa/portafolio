@@ -1,122 +1,101 @@
 import streamlit as st
 from PIL import Image
-st.title("Portafolio Multimodales")
 
+st.set_page_config(layout="wide")
+
+# --- Título y descripción ---
+st.markdown(
+    """
+    <h1 style='text-align:center;'>Portafolio Multimodales</h1>
+    <p style='text-align:center; font-size:18px;'>Descripción de los trabajos</p>
+    """,
+    unsafe_allow_html=True
+)
+
+# --- Sidebar ---
 with st.sidebar:
-  st.subheader("Portafolio Multimodales - Camila Vergara")
-  parrafo = (
-    "Aqui podremos ver los diferentes codigos trabajados en el semestre "
-  )
-  st.write(parrafo)
+    st.subheader("Portafolio Multimodales - Camila Vergara")
+    st.write("Aquí podremos ver los diferentes códigos trabajados en el semestre.")
 
-url_ia = "https://sites.google.com/view/interfacesmultimodales/página-principalo"
-st.subheader("En el siguiente enlace puedes encontrar páginas y ejercicios prácticos")
-st.write(f"Enlace para páginas y ejercicios: [Enlace]({url_ia})")
+# --- Datos de los proyectos ---
+proyectos = [
+    {
+        "titulo": "Intro",
+        "descripcion": "Primera página del portafolio.",
+        "imagen": "image_2025-10-23_000052698.png",
+        "url": "https://primerpaginacami.streamlit.app"
+    },
+    {
+        "titulo": "Conversión voz a texto",
+        "descripcion": "Aplicación que convierte voz a texto.",
+        "imagen": "image_2025-10-22_235920847.png",
+        "url": "https://traductoridioma.streamlit.app"
+    },
+    {
+        "titulo": "Texto a voz",
+        "descripcion": "Conversión de texto a audio.",
+        "imagen": "image_2025-10-23_000022811.png",
+        "url": "https://cuentodelgato.streamlit.app/"
+    },
+    {
+        "titulo": "Análisis texto inglés",
+        "descripcion": "Análisis de texto en inglés.",
+        "imagen": "image_2025-10-22_235720040.png",
+        "url": "https://txingles.streamlit.app"
+    },
+    {
+        "titulo": "Reconocimiento OCR",
+        "descripcion": "Reconocimiento de caracteres en imagen.",
+        "imagen": "image_2025-10-22_235834591.png",
+        "url": "https://audio-ocr.streamlit.app"
+    },
+    {
+        "titulo": "Objetos en imagen",
+        "descripcion": "Reconocimiento de objetos.",
+        "imagen": "image_2025-10-22_235633240.png",
+        "url": "https://yolocami.streamlit.app"
+    },
+    {
+        "titulo": "Reconocimiento de gestos",
+        "descripcion": "Detección de gestos.",
+        "imagen": "image_2025-10-22_235547846.png",
+        "url": "https://tmcami.streamlit.app"
+    },
+    {
+        "titulo": "Análisis texto español",
+        "descripcion": "Análisis de texto en español.",
+        "imagen": "image_2025-10-22_235806012.png",
+        "url": "https://txespanol.streamlit.app"
+    },
+    {
+        "titulo": "Tablero inteligente",
+        "descripcion": "Interfaz de análisis con voz.",
+        "imagen": "image_2025-10-22_235148140.png",
+        "url": "https://bocetostablero.streamlit.app"
+    },
+    {
+        "titulo": "Control por voz",
+        "descripcion": "Control de voz con MQTT.",
+        "imagen": "ctrlvoz.png",
+        "url": "https://controlador-voz.streamlit.app"
+    }
+]
 
-# Primera fila de columnas
-col1, col2, col3 = st.columns(3)
+# --- Mostrar en cuadrícula ---
+cols = st.columns(5)
+for i, proyecto in enumerate(proyectos):
+    with cols[i % 5]:
+        st.image(Image.open(proyecto["imagen"]), use_container_width=True)
+        st.markdown(
+            f"<p style='text-align:center; font-weight:bold; font-style:italic;'>{proyecto['titulo']}</p>",
+            unsafe_allow_html=True
+        )
+        st.markdown(
+            f"<p style='text-align:center;'>{proyecto['descripcion']}</p>",
+            unsafe_allow_html=True
+        )
+        st.markdown(
+            f"<p style='text-align:center; color:#00AEEF; font-style:italic;'>[Enlace]({proyecto['url']})</p>",
+            unsafe_allow_html=True
+        )
 
-with col1:
- st.subheader("Intro")
- image = Image.open('image_2025-10-23_000052698.png')
- st.image(image, width=190)
- st.write("En el siguiente enlase se vera la primera pagina") 
- url = "https://primerpaginacami.streamlit.app"
- st.write(f"Intro: [Enlace]({url})")
-
- st.subheader("Texto a Voz ")
- image = Image.open('image_2025-10-23_000022811.png')
- st.image(image, width=200)
- st.write("En la siguiente enlace se vera la creacion de texto a voz") 
- url = "https://cuentodelgato.streamlit.app/"
- st.write(f"YOLO: [Enlace]({url})")
-
-with col2: 
- st.subheader("Conversión de voz a texto - traductor")
- image = Image.open('image_2025-10-22_235920847.png')
- st.image(image, width=200)
- st.write("En la siguiente veremos una aplicación que usa la conversión de voz a texto.") 
- url = "https://traductoridioma.streamlit.app"
- st.write(f"Voz a texto: [Enlace]({url})")
-
- st.subheader("Reconocimiento Óptico de Caracteres OCR")
- image = Image.open('image_2025-10-22_235834591.png')
- st.image(image, width=190)
- st.write("En la siguiente enlace se vera el reconocimiento de caracteres en una foto.") 
- url = "https://audio-ocr.streamlit.app"
- st.write(f"Datos: [Enlace]({url})")
-
- st.subheader("Analisis de texto - Español")
- image = Image.open('image_2025-10-22_235806012.png')
- st.image(image, width=200)
- st.write("Aqui se vera el analisis de texto en español") 
- url = "https://txespanol.streamlit.app"
- st.write(f"Transcriptor: [Enlace]({url})")
-
-with col3: 
- st.subheader("Analisis de texto - Ingles")
- image = Image.open('image_2025-10-22_235720040.png')
- st.image(image, width=190)
- st.write("Aqui se vera el analisis de texto en ingles") 
- url = "https://txingles.streamlit.app"
- st.write(f"RAG: [Enlace]({url})")
-
- st.subheader("Objetos en imagen")
- image = Image.open('image_2025-10-22_235633240.png')
- st.image(image, width=200)
- st.write("Reconocimiento de objetos en imagenes") 
- url = "https://yolocami.streamlit.app"
- st.write(f"Vision: [Enlace]({url})")
- 
- st.subheader("Reconocimiento de gestos")
- image = Image.open('image_2025-10-22_235547846.png')
- st.image(image, width=200)
- st.write("Aqui hay reconocimiento de gestos") 
- url = "https://tmcami.streamlit.app"
- st.write(f"Vision: [Enlace]({url})")
-
-col4, col5 = st.columns(2)
-
-with col4:
- st.subheader("Chad PDF")
- image = Image.open('image_2025-10-22_235457515.png')
- st.image(image, width=190)
- st.write("Analisis de documentos PDF") 
- url = "https://un-pdfchat.streamlit.app"
- st.write(f"Intro: [Enlace]({url})")
-
- st.subheader("Interpretacíon de imagen")
- image = Image.open('image_2025-10-22_235405838.png')
- st.image(image, width=200)
- st.write("Interpretac'ion de imagenes.") 
- url = "https://renocimientoimagenes.streamlit.app"
- st.write(f"YOLO: [Enlace]({url})")
-
- st.subheader("Tablero personalizado")
- image = Image.open('image_2025-10-22_235245016.png')
- st.image(image, width=200)
- st.write("Tablero personalizado de Caracteres.") 
- url = "https://tablerodibujoo.streamlit.app"
- st.write(f"YOLO: [Enlace]({url})")
-
-with col5: 
- st.subheader("Tablero Inteligente")
- image = Image.open('image_2025-10-22_235148140.png')
- st.image(image, width=200)
- st.write("Tablero inteligente que te contara que puede analisar.") 
- url = "https://bocetostablero.streamlit.app"
- st.write(f"Voz a texto: [Enlace]({url})")
-
- st.subheader("Lector de Sensor MQTT")
- image = Image.open('image_2025-10-22_235030401.png')
- st.image(image, width=190)
- st.write("Sensor de MQTT.") 
- url = "https://recepprocess.streamlit.app"
- st.write(f"Datos: [Enlace]({url})")
-
- st.subheader("CONTROL POR VOZ")
- image = Image.open('ctrlvoz.png')
- st.image(image, width=200)
- st.write("Control de voz con el Broker.") 
- url = "https://controlador-voz.streamlit.app"
- st.write(f"Transcriptor: [Enlace]({url})")
